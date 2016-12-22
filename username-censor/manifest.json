@@ -14,12 +14,12 @@
     "permissions": [
         "tabs",
         "activeTab",
-        "*://www.reddit.com/*"
+        "*://*/*"
     ],
     "content_scripts": [
         {
-            "matches": ["*://www.reddit.com/*"],
-            "js": ["reddit.js"],
+            "matches": ["*://*/*"],
+            "js": ["censor.js"],
             "run_at": "document_end"
         }
     ]
