@@ -23,6 +23,8 @@ get_users = {
     // }
 };
 
+var censor_state = false
+
 
 chrome.runtime.onMessage.addListener(function(request, sender, callback) {
     var site = window.location.hostname;
@@ -41,10 +43,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, callback) {
 
     for (let i = 0; i < users.length; ++i) {
         let color = color_hash(users[i].textContent);
-        users[i].style.color = color;
-        users[i].style.backgroundColor = color;
+        users[i].style.color = (censor_state)? null:color;
+        users[i].style.backgroundColor = (censor_state)? null:color;
     }
-
+    censor_state = !censor_state;
 });
 
 
