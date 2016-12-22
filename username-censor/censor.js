@@ -23,6 +23,7 @@ get_users = {
     // }
 };
 
+
 chrome.runtime.onMessage.addListener(function(request, sender, callback) {
     var site = window.location.hostname;
 
@@ -39,8 +40,24 @@ chrome.runtime.onMessage.addListener(function(request, sender, callback) {
     var users = get_users[site]();
 
     for (let i = 0; i < users.length; ++i) {
-        users[i].style.color = "red";
-        users[i].style.backgroundColor = "red";
+        let color = color_hash(users[i].textContent);
+        users[i].style.color = color;
+        users[i].style.backgroundColor = color;
     }
 
 });
+
+
+function color_hash(name) {
+    var val = 0;
+    for (let i = 0; i < name.length; ++i) {
+        val = ((val << 5) - val) + name.charCodeAt(i);
+    }
+    val |= 0;
+
+    var R = val & 0xFF;
+    var G = (val>>8) & 0xFF;
+    var B = (val>>16) & 0xFF;
+
+    return "rgb("+R+","+G+","+B+")"
+}
