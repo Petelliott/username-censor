@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+
+    "name": "username-censor",
+    "description": "This extension censors usernames so you can easily screenshot",
+    "version": "0.1",
+
+    "background" : {
+        "scripts" : ["background.js"]
+    },
+    "browser_action": {
+
+    },
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "*://www.reddit.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["*://www.reddit.com/*"],
+            "js": ["reddit.js"],
+            "run_at": "document_end"
+        }
+    ]
+}
