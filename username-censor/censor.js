@@ -3,6 +3,9 @@ get_users = {
     "www.reddit.com": function() {
         return document.getElementsByClassName("author");
     },
+    "www.youtube.com": function() {
+        return document.getElementsByClassName("comment-author-text");
+    }
     // "staff.tumblr.com": function() { TODO: add tumblr support later
     //     const classes = ["asker","answerer","tumblr_blog"];
     //
