@@ -55,7 +55,6 @@ function color_hash(name) {
     for (let i = 0; i < name.length; ++i) {
         val = ((val << 5) - val) + name.charCodeAt(i);
     }
-    val |= 0;
 
     var R = val & 0xFF;
     var G = (val>>8) & 0xFF;
