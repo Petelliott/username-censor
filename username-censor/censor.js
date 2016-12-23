@@ -5,6 +5,9 @@ get_users = {
     },
     "www.youtube.com": function() {
         return document.getElementsByClassName("comment-author-text");
+    },
+    "www.facebook.com": function() {
+        return document.getElementsByClassName("UFICommentActorName");
     }
     // "staff.tumblr.com": function() { TODO: add tumblr support later
     //     const classes = ["asker","answerer","tumblr_blog"];

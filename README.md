@@ -4,5 +4,5 @@ when you click this chrome extension, it censors all of the usernames on the pag
 ## supported sites
 - [x] reddit
 - [x] youtube (still no avatar support)
+- [X] facebook (still no avatar support)
 - [ ] tumblr
-- [ ] facebook
